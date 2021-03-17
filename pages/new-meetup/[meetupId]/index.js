@@ -1,6 +1,12 @@
-import React from "react";
-const index = (props) => {
-  return <div>{props.metupId}</div>;
+import MeetupDetail from "../../../components/meetups/MeetupDetail";
+const MeetupDetails = () => {
+  const meetup = {
+    img: "https://source.unsplash.com/weekly?street",
+    title: "Dummy Title",
+    address: "Dummy address",
+    description: "Dummy description",
+  };
+  return <MeetupDetail {...meetup} />;
 };
 
-export default index;
+export default MeetupDetails;

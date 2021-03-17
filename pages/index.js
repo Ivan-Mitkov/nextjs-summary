@@ -31,7 +31,7 @@ const DUMMY_MEETUPS = [
   },
 ];
 const Home = () => {
-  return <MeetupList meetups={DUMMY_MEETUPS}></MeetupList>;
+  return <MeetupList meetups={DUMMY_MEETUPS} ></MeetupList>;
 };
 
 export default Home;
