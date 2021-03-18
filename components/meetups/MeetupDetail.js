@@ -4,7 +4,7 @@ const MeetupDetail = (props) => {
   // console.log(props);
   return (
     <section className={classes.detail}>
-      <img src={props.img} />
+      <img src={props.image} />
       <h1>{props.title}</h1>
       <p>{props.address}</p>
       <p>{props.description}</p>
