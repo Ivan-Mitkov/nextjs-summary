@@ -30,8 +30,32 @@ const DUMMY_MEETUPS = [
     address: "Some address",
   },
 ];
-const Home = () => {
-  return <MeetupList meetups={DUMMY_MEETUPS} ></MeetupList>;
+const Home = (props) => {
+  return <MeetupList meetups={props.meetups}></MeetupList>;
 };
 
+////generate on buil end regenerate every 100 secunds
+//https://nextjs.org/docs/basic-features/data-fetching.
+export async function getStaticProps(context) {
+  return {
+    props: {
+      meetups: DUMMY_MEETUPS,
+    },
+    //An optional amount in seconds after which a page re-generation can occur.
+    //regenarate every 100 s on the server https://nextjs.org/docs/basic-features/data-fetching#incremental-static-regeneration
+    revalidate: 100,
+  };
+}
+//Generate page on server on every request
+// export async function getServerSideProps(context) {
+//   const req=context.req;
+//   const res=context.res;
+//   // console.log(req);
+//   // console.log(res)
+//   return {
+//     props: {
+//       meetups: DUMMY_MEETUPS,
+//     },
+//   };
+// }
 export default Home;
