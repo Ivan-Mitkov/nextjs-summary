@@ -1,39 +1,18 @@
 import MeetupList from "../components/meetups/MeetupList";
+import Head from "next/head";
 //will not be included in client side code
 import { MongoClient } from "mongodb";
-// const DUMMY_MEETUPS = [
-//   {
-//     id: "m1",
-//     title: "A first meetup",
-//     image: "https://source.unsplash.com/weekly?city",
 
-//     address: "Some address",
-//   },
-//   {
-//     id: "m2",
-//     title: "A second meetup",
-//     image: "https://source.unsplash.com/weekly?building",
-
-//     address: "Some address",
-//   },
-//   {
-//     id: "m3",
-//     title: "A third meetup",
-//     image: "https://source.unsplash.com/weekly?village",
-
-//     address: "Some address",
-//   },
-//   {
-//     id: "m4",
-//     title: "A fourth meetup",
-//     image: "https://source.unsplash.com/weekly?street",
-
-//     address: "Some address",
-//   },
-// ];
 const Home = (props) => {
-  // console.log(props);
-  return <MeetupList meetups={props.meetups}></MeetupList>;
+  return (
+    <>
+      <Head>
+        <title>Meetups</title>
+        <meta name="description" content='Meetups in every city'></meta>
+      </Head>
+      <MeetupList meetups={props.meetups}></MeetupList>
+    </>
+  );
 };
 
 ////generate on buil end regenerate every 100 secunds

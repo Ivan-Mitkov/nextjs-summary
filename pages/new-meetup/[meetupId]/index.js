@@ -1,8 +1,17 @@
 import { MongoClient, ObjectId } from "mongodb";
+import Head from "next/head";
 import MeetupDetail from "../../../components/meetups/MeetupDetail";
 
 const MeetupDetails = (props) => {
-  return <MeetupDetail {...props.meetup} />;
+  return (
+    <>
+      <Head>
+        <title>Meetup Detail: {props.meetup.title}</title>
+        <meta name="description" content={`${props.meetup.address}`}></meta>
+      </Head>{" "}
+      <MeetupDetail {...props.meetup} />
+    </>
+  );
 };
 
 //https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation
